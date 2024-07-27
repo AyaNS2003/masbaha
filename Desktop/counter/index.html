@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>المسبحةالإلكترونية</title>
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!--Arabic font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap" rel="stylesheet">
+
+    <!--Merienda font "English"-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    
+    <!--Shantell Sans "English"-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&family=Merienda:wght@300..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!--Saira font for numbers-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&family=Merienda:wght@300..900&family=Saira:ital,wght@0,100..900;1,100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <script>
+        let count1 = 0;
+        let count2 = 0;
+        let count3 = 0;
+        let count4 = 0;
+        let count5 = 0;
+
+        let counterNumber = 0;
+      
+        function countFunction(x)
+        {
+            if (x == 1)
+            {
+                count1 ++;
+                document.getElementById('text-field1').value = count1.toString();
+            }
+            else if (x == 2)
+            {
+                count2 ++;
+                document.getElementById('text-field2').value = count2.toString();
+            }
+            else if (x == 3)
+            {
+                count3 ++;
+                document.getElementById('text-field3').value = count3.toString();
+            }
+            else if (x == 4)
+            {
+                count4 ++;
+                document.getElementById('text-field4').value = count4.toString();
+            }
+            else if (x == 5)
+            {
+                count5 ++;
+                document.getElementById('text-field5').value = count5.toString();
+            }
+            
+        }
+
+        function showPopUp(x)
+        {
+            counterNumber = x;
+            document.getElementById('reset-div').style.display = 'flex';
+        }
+ 
+        function resetFunction()
+        {
+            if (counterNumber == 1)
+            {
+                count1 = 0;
+                document.getElementById('text-field1').value = count1.toString();
+            }
+            else if (counterNumber == 2)
+            {
+                count2 = 0;
+                document.getElementById('text-field2').value = count2.toString();
+            }
+            else if (counterNumber == 3)
+            {
+                count3 = 0;
+                document.getElementById('text-field3').value = count3.toString();
+            }
+            else if (counterNumber == 4)
+            {
+                count4 = 0;
+                document.getElementById('text-field4').value = count4.toString();
+            }
+            else if (counterNumber == 5)
+            {
+                count5 = 0;
+                document.getElementById('text-field5').value = count5.toString();
+            }
+            document.getElementById('reset-div').style.display = 'none';
+        }
+        
+        function closeDiv()
+        {
+            document.getElementById('reset-div').style.display = 'none';
+            document.getElementById('reset-all-div').style.display = 'none';
+            document.getElementById('set-target-div').style.display = 'none';
+        }
+
+        function resetAllMsg()
+        {
+            document.getElementById('reset-all-div').style.display = 'flex';
+        }
+        
+        function resetAllFunction()
+        {
+            count1 = 0;
+            count2 = 0;
+            count3 = 0;
+            count4 = 0;
+            count5 = 0;
+            for (let i = 1 ; i <= 5 ; i++ )
+                document.getElementById('text-field'+i.toString()).value = "0";
+            document.getElementById('reset-all-div').style.display = 'none';
+        }
+
+        function setTarget()
+        {
+            document.getElementById('set-target-div').style.display = 'flex';
+        }
+
+        </script>
+
+    <div class="settings-div">
+        <p id="test-p"></p>
+        <button class="btn btn-outline-dark reset-all-btn" onclick="resetAllMsg()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+        </svg><p class="btn-text" id="reset-all">RESET ALL</p></button>
+        
+        <br>
+
+        <button class="btn btn-outline-dark set-target-btn" onclick="setTarget()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-crosshair" viewBox="0 0 16 16">
+            <path d="M8.5.5a.5.5 0 0 0-1 0v.518A7 7 0 0 0 1.018 7.5H.5a.5.5 0 0 0 0 1h.518A7 7 0 0 0 7.5 14.982v.518a.5.5 0 0 0 1 0v-.518A7 7 0 0 0 14.982 8.5h.518a.5.5 0 0 0 0-1h-.518A7 7 0 0 0 8.5 1.018zm-6.48 7A6 6 0 0 1 7.5 2.02v.48a.5.5 0 0 0 1 0v-.48a6 6 0 0 1 5.48 5.48h-.48a.5.5 0 0 0 0 1h.48a6 6 0 0 1-5.48 5.48v-.48a.5.5 0 0 0-1 0v.48A6 6 0 0 1 2.02 8.5h.48a.5.5 0 0 0 0-1zM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+          </svg><p class="btn-text" id="set-target">SET TARGET</p></button>
+        
+    </div>    
+
+    <div class="container-fluid d-flex align-items-center justify-content-start flex-column" style="padding: 25px; ">
+        <h2 style="font-family: Marhey;">المسبحة اللإلكترونية</h2>
+        <div class="container-fluid d-flex flex-row justify-content-center align-items-center flex-wrap " style="width: 75%;">
+            <div class="container d-flex justify-content-center align-items-center flex-column counter-div">
+                <h3 class="theker-text">سبحان الله</h3>
+                <input disabled value="0" id="text-field1" class="text-field">
+                <div class="d-flex flex-row justify-content-center" style="width: 100%;">
+                    <button class="btn count-btn" onclick="countFunction(1)">Count</button>
+                    <button class="btn reset-btn" onclick="showPopUp(1)" id="">Reset</button>
+                </div>
+            </div>
+        
+            <div class="container d-flex justify-content-center align-items-center flex-column counter-div">
+                <h3 class="theker-text">الحمد لله</h3>
+                <input disabled value="0" id="text-field2" class="text-field">
+                <div class="d-flex flex-row justify-content-center" style="width: 100%;">
+                    <button class="btn count-btn" onclick="countFunction(2)">Count</button>
+                    <button class="btn reset-btn" onclick="showPopUp(2)">Reset</button>
+                </div>
+            </div>
+
+            <div class="container d-flex justify-content-center align-items-center flex-column counter-div">
+                <h3 class="theker-text">لا إله إلا الله</h3>
+                <input disabled value="0" id="text-field3" class="text-field">
+                <div class="d-flex flex-row justify-content-center" style="width: 100%;">
+                    <button class="btn count-btn" onclick="countFunction(3)">Count</button>
+                    <button class="btn reset-btn" onclick="showPopUp(3)">Reset</button>
+                </div>
+            </div>
+
+            <div class="container d-flex justify-content-center align-items-center flex-column counter-div">
+                <h3 class="theker-text">الله أكبر</h3>
+                <input disabled value="0" id="text-field4" class="text-field">
+                <div class="d-flex flex-row justify-content-center" style="width: 100%;">
+                    <button class="btn count-btn" onclick="countFunction(4)">Count</button>
+                    <button class="btn reset-btn" onclick="showPopUp(4)">Reset</button>
+                </div>
+            </div>
+
+            <div class="container d-flex justify-content-center align-items-center flex-column counter-div">
+                <h3 class="theker-text">اللهم صلّ على سيدنا محمد</h3>
+                <input disabled value="0" id="text-field5" class="text-field">
+                <div class="d-flex flex-row justify-content-center" style="width: 100%;">
+                    <button class="btn count-btn" onclick="countFunction(5)">Count</button>
+                    <button class="btn reset-btn" onclick="showPopUp(5)">Reset</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--reset div-->
+    <div id="reset-div" class="reset-div">
+        <div id="reset-min-div" class="reset-min-div">
+            <h3>Are you sure you want to reset?</h3>
+            <button class="btn" id="yes-btn" onclick="resetFunction()">Yes</button>
+            <button class="btn" id="no-btn" onclick="closeDiv()">No</button>
+            <img src="imgs/reset_img.jpg" width="200px" id="reset_popup_img">
+        </div>
+    </div>
+
+    <!--reset all div-->
+    <div id="reset-all-div" class="reset-div">
+        <div id="reset-all-min-div" class="reset-min-div">
+            <h3>Are you sure you want to reset?</h3>
+            <button class="btn" id="yes-btn" onclick="resetAllFunction()">Yes</button>
+            <button class="btn" id="no-btn" onclick="closeDiv()">No</button>
+            <img src="imgs/reset_all_img.jpg" width="200px" id="reset_all_popup_img">
+        </div>
+    </div>
+
+    <!--set target div-->
+    <div id="set-target-div" class=" set-target-div">
+        <div id="" class="set-target-min-div">
+            <button type="button" class="close-btn" onclick="closeDiv()">close</button>
+            <h3>Set target</h3>
+            <form class="d-flex flex-column">
+                <div>
+                    <input value="100" type="number" step="10" min="0" id="tasbeeh">
+                    <label for="tasbeeh">سبحان الله</label>
+                </div>
+                
+                <div>
+                    <input value="100" type="number" step="50" min="0" id="al-hamd">
+                    <label for="al-hamd">الحمد لله</label>
+                </div>
+
+                <div>
+                    <input value="100" type="number" step="50" min="0" id="tawheed">
+                    <label for="tawheed">لا إله إلا الله</label>
+                </div>
+
+                <div>
+                    <input value="100" type="number" step="50" min="0" id="takbeer">
+                    <label for="takbeer">الله أكبر</label>
+                </div>
+
+                <div>
+                    <input value="100" type="number" step="50" min="0" id="salah">
+                    <label for="salah">اللهم صلّ على سيّدنا محمّد</label>
+                </div>
+                <input class="btn btn-outline-light submit-btn align-self-center" onclick="setMaxForCounters()" type="submit">
+            </form>
+            <img src="imgs/set_target_img.jpg" width="200px" id="reset_all_popup_img">   
+        </div>
+    </div>
+
+    <img src="imgs/bg_img.jpg" width="450px" alt="bears-img" id="bg-img">
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+</body>
+</html>
